@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        #mainDiv{
+            width: 100%;
+            height: 100%;
+            background-image: url("bakgrunnsbilde.jpg");
+            background-size: cover;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button{
+            display: inline-block;
+            height: 38px;
+            padding: 0 30px;
+            color: #555;
+            text-align: center;
+            font-size: 11px;
+            font-weight: 600;
+            line-height: 38px;
+            letter-spacing: .1rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            white-space: nowrap;
+            background-color: lightskyblue;
+            border-radius: 4px;
+            border: 1px solid #bbb;
+            cursor: pointer;
+            box-sizing: border-box;
+            margin: 30px;
+            transition: 1s;
+        }
+        #buttonwrapper{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body {
+            font-size: 1em;
+            line-height: 1.6;
+            font-weight: 400;
+            font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #222; }
+
+        #info{
+            max-width: 500px;
+            text-align: center;
+        }
+        #btn:hover{
+            color: #333;
+            border-color: #888;
+            outline: 0;
+            transform: rotate(20deg) rotateX(360deg);
+            box-shadow: 5px 10px 15px 2px  #888888;
+
+        }
+        #btns:hover{
+            color: #333;
+            border-color: #888;
+            outline: 0;
+            transform: rotate(-20deg) rotateX(360deg);
+            box-shadow: 5px 10px 15px 2px  #888888;
+
+        }
+        #seconddiv{
+            width: 100%;
+            height: 100%;
+            background-image: url("bakgrunnsbilde.jpg");
+            background-size: cover;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            top: 0%;
+
+        }
+        #thirddiv{
+            width: 100%;
+            height: 100%;
+            background-image: url("bakgrunnsbilde.jpg");
+            background-size: cover;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            top: 0%;
+
+        }
+        th,tr,table {
+            border: 1px solid black
+        }
+        tr{
+            background-color: transparent;
+        }
+        .checbox{
+            position: relative;
+            width: 100%;
+            background-color: lightcoral;
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div id="mainDiv">
+        <h1 id="h1">Østfold på hjul</h1>
+        <p id="info">I år kan vi tilby dere 2 eksotikse sukkelruter man kan enten velge lang eller kort rute. langrute har en pris på hele
+        7800 kr mens liten ruter koster bare 3200 kr. på disse turene får du med deg en rekke severdigheter blant annet kan man være med på saftpressekurs i askim.</p>
+        <div id="buttonwrapper">
+            <button id="btn">Lang rute 7800kr</button>
+            <button id="btns">Kort rute 3200kr</button>
+        </div>
+
+    </div>
+    <div id="seconddiv">
+        <table>
+            <thead>
+            <tr>
+                <th>attraksjon</th>
+                <th>pris</th>
+                <th>trykk for å melde deg på</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr>
+                <th>saftpressekurs Askim saftpreseri(Askim)</th>
+                <th>190kr</th>
+                <th><div class="checbox" id="med1">ikke meldt på</div></th>
+            </tr>
+            <tr>
+                <th>Skattejakt i gamlebyen(fredrikstad)</th>
+                <th>95kr</th>
+                <th><div class="checbox" id="med2">ikke meldt på</div></th>
+            </tr>
+            <tr>
+                <th>Elvelangs glomma(Fredrikstad)</th>
+                <th>65kr</th>
+                <th><div class="checbox" id="med3">ikke meldt på</div></th>
+            </tr>
+
+            <tr>
+                <th>Mini cruise på Glomma (Fredrikstad)</th>
+                <th>145kr</th>
+                <th><div class="checbox" id="med4">ikke meldt på</div></th>
+            </tr>
+            <tr>
+                <th>Våler klatrepark(Moss)</th>
+                <th>195kr</th>
+                <th><div class="checbox" id="med5">ikke meldt på</div></th>
+            </tr>
+            <tr>
+                <th>pilegrimsveien</th>
+                <th>60kr</th>
+                <th><div class="checbox" id="med6">ikke meldt på</div></th>
+            </tr>
+            <tr>
+                <th>spasertur langs Olavsleden(Halden)</th>
+                <th>150kr</th>
+                <th><div class="checbox" id="med7">ikke meldt på</div></th>
+            </tr>
+            <tr>
+                <th>Omvisning rød herregård(Halden)</th>
+                <th>95kr</th>
+                <th><div class="checbox" id="med8">ikke meldt på</div></th>
+            </tr> <tr>
+                <th>Tur med ms strømfoss(Halden)</th>
+                <th>110kr</th>
+                <th><div class="checbox" id="med9">ikke meldt på</div></th>
+            </tr>
+            </tr> <tr>
+                <th>Rammeverksted på galleri Lund(Ørje)</th>
+                <th>120kr</th>
+                <th><div class="checbox" id="med10">ikke meldt på</div></th>
+            </tr>
+            <tr>
+                <th>dette blir prisen på reisen</th>
+                <th>sum</th>
+                <th id="tot">7800kr</th>
+
+            </tr>
+
+
+            </tbody>
+
+        </table>
+
+
+    </div>
+
+
+    </div>
+
+    <div id="thirddiv">
+        <table>
+            <thead>
+            <tr>
+                <th>attraksjon</th>
+                <th>pris</th>
+                <th>trykk for å melde deg på</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr>
+                <th>saftpressekurs Askim saftpreseri(Askim)</th>
+                <th>190kr</th>
+                <th><div class="checbox" id="me1">ikke meldt på</div></th>
+            </tr>
+            <tr>
+                <th>Skattejakt i gamlebyen(fredrikstad)</th>
+                <th>95kr</th>
+                <th><div class="checbox" id="me2">ikke meldt på</div></th>
+            </tr>
+            <tr>
+                <th>Elvelangs glomma(Fredrikstad)</th>
+                <th>65kr</th>
+                <th><div class="checbox" id="me3">ikke meldt på</div></th>
+            </tr>
+
+            <tr>
+                <th>Mini cruise på Glomma (Fredrikstad)</th>
+                <th>145kr</th>
+                <th><div class="checbox" id="me4">ikke meldt på</div></th>
+            </tr>
+            <tr>
+                <th>Våler klatrepark(Moss)</th>
+                <th>195kr</th>
+                <th><div class="checbox" id="me5">ikke meldt på</div></th>
+            </tr>
+            <tr>
+                <th>pilegrimsveien</th>
+                <th>60kr</th>
+                <th><div class="checbox" id="me6">ikke meldt på</div></th>
+            </tr>
+            <tr>
+                <th>dette blir prisen på reisen</th>
+                <th>sum</th>
+                <th id="total">3200kr</th>
+
+            </tr>
+
+
+            </tbody>
+
+        </table>
+
+
+    </div>
+
+    <script>
+
+
+        var btn = document.getElementById("btn");
+        var btns = document.getElementById("btns");
+        var h1 = document.getElementById("h1");
+        var info = document.getElementById("info");
+        var mainDiv = document.getElementById("mainDiv");
+        var seconddiv = document.getElementById("seconddiv");
+        var thirddiv = document.getElementById("thirddiv");
+        var total = document.getElementById("total");
+        var tot = document.getElementById("tot");
+
+
+
+        var med1 = document.getElementById("med1");
+        var med2 = document.getElementById("med2");
+        var med3 = document.getElementById("med3");
+        var med4 = document.getElementById("med4");
+        var med5 = document.getElementById("med5");
+        var med6 = document.getElementById("med6");
+        var me1 = document.getElementById("me1");
+        var me2 = document.getElementById("me2");
+        var me3 = document.getElementById("me3");
+        var me4 = document.getElementById("me4");
+        var me5 = document.getElementById("me5");
+        var me6 = document.getElementById("me6");
+
+
+        var value1 = 0;
+        var value2 = 0;
+        var value3 = 0;
+        var value4 = 0;
+        var value5 = 0;
+        var value6 = 0;
+        var value7 = 0;
+        var value8 = 0;
+        var value9 = 0;
+        var value10 = 0;
+
+
+        var pris = 3200;
+        var pris2 =7800;
+
+
+        med1.onclick = function() {
+            value1 +=1;
+            if(value1 === 1){
+                med1.style.backgroundColor = "lightgreen";
+                pris +=190;
+                pris2 +=190;
+                med1.innerHTML = "meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+
+                console.log(value1)
+            }else if(value1 === 2){
+                med1.style.backgroundColor = "lightcoral";
+                pris -=190;
+                pris2 -=190;
+                med1.innerHTML = "ikke meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+                console.log(pris);
+                value1 -=2;
+                console.log(value1);
+
+            }
+
+
+        };
+        med2.onclick = function() {
+            value2 +=1;
+            if(value2 === 1){
+                med2.style.backgroundColor = "lightgreen";
+                pris +=95;
+                pris2 +=95;
+                med2.innerHTML = "meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+
+
+            }else if(value2 === 2){
+                med2.style.backgroundColor = "lightcoral";
+                pris -=95;
+                pris2 -=95;
+                med2.innerHTML = "ikke meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+                console.log(pris);
+                value2 -=2;
+                console.log(value1);
+
+            }
+
+
+        };
+        med3.onclick = function() {
+            value3 +=1;
+            if(value3 === 1){
+                med3.style.backgroundColor = "lightgreen";
+                pris +=65;
+                pris2 +=65;
+                med3.innerHTML = "meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+
+            }else if(value3 === 2){
+                med3.style.backgroundColor = "lightcoral";
+                pris -=65;
+                pris2 -=65;
+                med3.innerHTML = "ikke meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+                console.log(pris);
+                value3 -=2;
+                console.log(value1);
+
+            }
+
+
+        };
+        med4.onclick = function() {
+            value4 +=1;
+            if(value4 === 1){
+                med4.style.backgroundColor = "lightgreen";
+                pris +=145;
+                pris2 +=145;
+                med4.innerHTML = "meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+
+            }else if(value4 === 2){
+                med4.style.backgroundColor = "lightcoral";
+                pris -=145;
+                pris2-=145;
+                med4.innerHTML = "ikke meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+                console.log(pris);
+                value4 -=2;
+                console.log(value1);
+
+            }
+
+
+        };
+        med5.onclick = function() {
+            value5 +=1;
+            if(value5 === 1){
+                med5.style.backgroundColor = "lightgreen";
+                pris +=195;
+                pris2 +=195;
+                med5.innerHTML = "meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+
+            }else if(value5 === 2){
+                med5.style.backgroundColor = "lightcoral";
+                pris -=195;
+                pris2 -=195;
+                med5.innerHTML = "ikke meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+                console.log(pris);
+                value5 -=2;
+                console.log(value1);
+
+            }
+
+
+        };
+        med6.onclick = function() {
+            value6 +=1;
+            if(value6 === 1){
+                med6.style.backgroundColor = "lightgreen";
+                pris +=60;
+                pris2 +=60;
+                med6.innerHTML = "meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+
+            }else if(value6 === 2){
+                med6.style.backgroundColor = "lightcoral";
+                pris -=60;
+                pris2 -=60;
+                med6.innerHTML = "ikke meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+                console.log(pris);
+                value6 -=2;
+                console.log(value1);
+
+            }
+
+
+        };
+        med7.onclick = function() {
+            value7 +=1;
+            if(value7 === 1){
+                med7.style.backgroundColor = "lightgreen";
+                pris +=150;
+                pris2 +=150;
+                med7.innerHTML = "meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+
+            }else if(value7 === 2){
+                med7.style.backgroundColor = "lightcoral";
+                pris -=150;
+                pris2 -=150;
+                med7.innerHTML = "ikke meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+                console.log(pris);
+                value7 -=2;
+                console.log(value1);
+
+            }
+
+
+        };
+        med8.onclick = function() {
+            value8 +=1;
+            if(value8 === 1){
+                med8.style.backgroundColor = "lightgreen";
+                pris +=95;
+                pris2 +=95;
+                med8.innerHTML = "meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+
+            }else if(value8 === 2){
+                med8.style.backgroundColor = "lightcoral";
+                pris -=95;
+                pris2 -=95;
+                med8.innerHTML = "ikke meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+                console.log(pris);
+                value8 -=2;
+                console.log(value1);
+
+            }
+
+
+        };
+        med9.onclick = function() {
+            value9 +=1;
+            if(value9 === 1){
+                med9.style.backgroundColor = "lightgreen";
+                pris +=110;
+                pris2 +=110;
+                med9.innerHTML = "meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+
+            }else if(value9 === 2){
+                med9.style.backgroundColor = "lightcoral";
+                pris -=110;
+                pris2 -=110;
+                med9.innerHTML = "ikke meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+                console.log(pris);
+                value9 -=2;
+                console.log(value1);
+
+            }
+
+
+        };
+        med10.onclick = function() {
+            value10 +=1;
+            if(value10 === 1){
+                med10.style.backgroundColor = "lightgreen";
+                pris +=120;
+                pris2 +=120;
+                med10.innerHTML = "meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+
+            }else if(value10 === 2){
+                med10.style.backgroundColor = "lightcoral";
+                pris -=120;
+                pris2 -=120;
+                med10.innerHTML = "ikke meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+                console.log(pris);
+                value10 -=2;
+                console.log(value1);
+
+            }
+
+
+        };
+
+        me1.onclick = function() {
+            value1 +=1;
+            if(value1 === 1){
+                me1.style.backgroundColor = "lightgreen";
+                pris +=190;
+                pris2 +=190;
+                me1.innerHTML = "meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+
+                console.log(value1)
+            }else if(value1 === 2){
+                me1.style.backgroundColor = "lightcoral";
+                pris -=190;
+                pris2 -=190;
+                me1.innerHTML = "ikke meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+                console.log(pris);
+                value1 -=2;
+                console.log(value1);
+
+            }
+
+
+        };
+        me2.onclick = function() {
+            value2 +=1;
+            if(value2 === 1){
+                me2.style.backgroundColor = "lightgreen";
+                pris +=95;
+                pris2 +=95;
+                me2.innerHTML = "meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+
+
+            }else if(value2 === 2){
+                me2.style.backgroundColor = "lightcoral";
+                pris -=95;
+                pris2 -=95;
+                me2.innerHTML = "ikke meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+                console.log(pris);
+                value2 -=2;
+                console.log(value1);
+
+            }
+
+
+        };
+        me3.onclick = function() {
+            value3 +=1;
+            if(value3 === 1){
+                me3.style.backgroundColor = "lightgreen";
+                pris +=65;
+                pris2 +=65;
+                me3.innerHTML = "meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+
+            }else if(value3 === 2){
+                me3.style.backgroundColor = "lightcoral";
+                pris -=65;
+                pris2 -=65;
+                me3.innerHTML = "ikke meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+                console.log(pris);
+                value3 -=2;
+                console.log(value1);
+
+            }
+
+
+        };
+        me4.onclick = function() {
+            value4 +=1;
+            if(value4 === 1){
+                me4.style.backgroundColor = "lightgreen";
+                pris +=145;
+                pris2 +=145;
+                me4.innerHTML = "meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+
+            }else if(value4 === 2){
+                me4.style.backgroundColor = "lightcoral";
+                pris -=145;
+                pris2-=145;
+                me4.innerHTML = "ikke meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+                console.log(pris);
+                value4 -=2;
+                console.log(value1);
+
+            }
+
+
+        };
+        me5.onclick = function() {
+            value5 +=1;
+            if(value5 === 1){
+                me5.style.backgroundColor = "lightgreen";
+                pris +=195;
+                pris2 +=195;
+                me5.innerHTML = "meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+
+            }else if(value5 === 2){
+                me5.style.backgroundColor = "lightcoral";
+                pris -=195;
+                pris2 -=195;
+                me5.innerHTML = "ikke meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+                console.log(pris);
+                value5 -=2;
+                console.log(value1);
+
+            }
+
+
+        };
+        me6.onclick = function() {
+            value6 += 1;
+            if (value6 === 1) {
+                me6.style.backgroundColor = "lightgreen";
+                pris += 60;
+                pris2 += 60;
+                me6.innerHTML = "meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+
+            } else if (value6 === 2) {
+                me6.style.backgroundColor = "lightcoral";
+                pris -= 60;
+                pris2 -= 60;
+                me6.innerHTML = "ikke meldt på";
+                total.innerHTML = "";
+                total.innerHTML = pris;
+                tot.innerHTML = "";
+                tot.innerHTML = pris2;
+                console.log(pris);
+                value6 -= 2;
+                console.log(value1);
+
+            }
+        };
+
+
+
+
+
+
+        btn.onclick = function () {
+            seconddiv.style.opacity = "1";
+            seconddiv.style.visibility = "visible";
+            mainDiv.style.opacity = "0";
+            mainDiv.style.visibility = "hidden";
+
+
+
+
+        };
+        btns.onclick = function() {
+            thirddiv.style.opacity = "1";
+            thirddiv.style.visibility = "visible";
+            mainDiv.style.opacity = "0";
+            mainDiv.style.visibility = "hidden";
+
+        };
+
+
+    </script>
+
+</body>
+</html>
