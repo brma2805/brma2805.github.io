@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+
+    <style>
+        #div{
+            width: 1000px;
+            height: 300px;
+            margin: auto;
+            background-color: #000099;
+            overflow: hidden;
+        }
+        #sykkel{
+            position: relative;
+            top: 145px;
+            left: 300px;
+        }
+        #bakhjul{
+            position: relative;
+            top: 155px;
+
+            left: 120px;
+
+        }
+        #forhjul{
+            position: relative;
+            top: 155px;
+
+            left: 185px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div id="div">
+        <img src="sykkel2.png" id="sykkel">
+        <img src="bakhjul2.png" id="bakhjul">
+        <img src="forhjul2.png" id="forhjul">
+
+    </div>
+
+    <script>
+        let sykkel = document.getElementById("sykkel");
+        let bakhjul = document.getElementById("bakhjul");
+        let forhjul = document.getElementById("forhjul");
+
+        let keyframes = [
+            {transform: "translateX(0) rotate(0) translateY(0)"},
+            {transform: "translateX(1000px) rotate(-30deg) translate(130px)"}
+        ];
+        let settings = {
+            duration: 5000,
+            fill: "forwards"
+        };
+
+        var animas = sykkel.animate(keyframes, settings);
+
+        let keyframes2 = [
+            {transform: "translateX(0) rotate(0deg) skewY(0deg)"},
+            {transform: "translateX(1150px) rotate(1440deg) skewY(70deg)"}
+        ];
+        let settings2 = {
+            duration: 5000,
+            fill: "forwards"
+        };
+
+        var animasjon = forhjul.animate(keyframes2, settings2);
+
+        let keyframes3 = [
+            {transform: "translateX(0) rotate(0deg) "},
+            {transform: "translateX(580px) rotate(720deg)"},
+            {transform: "translateX(1150px) rotate(1440deg)"}
+        ];
+        let settings3 = {
+            duration: 5000,
+            fill: "forwards"
+        };
+
+        var animasjon3 = bakhjul.animate(keyframes3, settings3);
+    </script>
+
+</body>
+</html>
