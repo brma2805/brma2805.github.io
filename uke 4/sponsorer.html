@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="initial-scale=0.8">
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        #main{
+              width: 100%;
+              height: 88%;
+              display: flex;
+              background-color: #c43c35;
+              flex-flow: row;
+              justify-content: center;
+              align-items: center;
+            flex-flow: wrap;
+        }
+        #first{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: wrap;
+        }
+      .sponsorene{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 50%;
+          height: 100%; }
+
+      #second{
+          width: 100%;
+          height: 100%;
+          background-color: lightsalmon;
+          display: flex;
+          flex-flow: wrap;
+          justify-content: center;
+          align-items: center;
+      }
+      #map{
+          height: 100%;
+          width: 50%;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+      }
+        #contact{
+            width: 50%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-info{
+            display: flex;
+            height: 25%;
+            width: 100%;
+            flex-direction: column;
+
+        }
+        .center-p{
+            text-align: center;
+        }
+
+
+
+
+
+
+        @media screen and (max-width: 850px) {
+        .sponsorene{
+            width: 100%;
+            height: 50%;
+        }
+            #contact{
+                width: 100%;
+                height: 100%;
+            }
+            #map{
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+
+
+        <div id="first">
+            <div class="sponsorene">
+                <img src="sponsor%201.png">
+            </div>
+            <div class="sponsorene">
+                <img src="sponsor%201.png">
+            </div>
+        </div>
+
+        <div id="second">
+            <div id="contact">
+                <div class="contact-info">
+                    <br>
+                    <br>
+                    <h1 class="center-p">Kontakt Oss</h1>
+                </div>
+                <div class="contact-info">
+                    <p class="center-p">Sandvikarevyen</p>
+                    <p class="center-p">Organisasjonsnummer 999 632 483</p>
+                    <p class="center-p">Elias Smiths Vei 15, 1337 Sandvika</p>
+                </div>
+                <div class="contact-info">
+                    <p class="center-p">Jakob Blom</p>
+                    <p class="center-p">Mobil: 999 99 999</p>
+                    <p class="center-p">Jakob@Sandvikarevyen.no</p>
+                </div>
+                <div class="contact-info">
+                    <p class="center-p">Ida Johnsen</p>
+                    <p class="center-p">Mobil: 999 99 999</p>
+                    <p class="center-p">Ida@Sanvikarevyen.no</p>
+                </div>
+            </div>
+            <div id="map"></div>
+
+        </div>
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+    <script>
+        function initMap() {
+            var uluru = {lat: 59.893582, lng: 10.517864};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: uluru,
+
+                styles: [
+                    {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+                    {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+                    {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+                    {
+                        featureType: 'administrative.locality',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#d59563'}]
+                    },
+                    {
+                        featureType: 'poi',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#d59563'}]
+                    },
+                    {
+                        featureType: 'poi.park',
+                        elementType: 'geometry',
+                        stylers: [{color: '#263c3f'}]
+                    },
+                    {
+                        featureType: 'poi.park',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#6b9a76'}]
+                    },
+                    {
+                        featureType: 'road',
+                        elementType: 'geometry',
+                        stylers: [{color: '#38414e'}]
+                    },
+                    {
+                        featureType: 'road',
+                        elementType: 'geometry.stroke',
+                        stylers: [{color: '#212a37'}]
+                    },
+                    {
+                        featureType: 'road',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#9ca5b3'}]
+                    },
+                    {
+                        featureType: 'road.highway',
+                        elementType: 'geometry',
+                        stylers: [{color: '#746855'}]
+                    },
+                    {
+                        featureType: 'road.highway',
+                        elementType: 'geometry.stroke',
+                        stylers: [{color: '#1f2835'}]
+                    },
+                    {
+                        featureType: 'road.highway',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#f3d19c'}]
+                    },
+                    {
+                        featureType: 'transit',
+                        elementType: 'geometry',
+                        stylers: [{color: '#2f3948'}]
+                    },
+                    {
+                        featureType: 'transit.station',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#d59563'}]
+                    },
+                    {
+                        featureType: 'water',
+                        elementType: 'geometry',
+                        stylers: [{color: '#ffa07a'}]
+                    },
+                    {
+                        featureType: 'water',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#515c6d'}]
+                    },
+                    {
+                        featureType: 'water',
+                        elementType: 'labels.text.stroke',
+                        stylers: [{color: '#ffa07a'}]
+                    }
+                ]
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+
+
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZtECQJHJ2Q13Sah_qPcFBP9iiBPIa64o&callback=initMap">
+    </script>
+
+</body>
+</html>
