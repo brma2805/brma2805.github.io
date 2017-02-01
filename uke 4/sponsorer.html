@@ -70,6 +70,199 @@
             text-align: center;
         }
 
+        #third{
+            width: 100%;
+            height: 100%;
+            background-color: #c43c35;
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .videoflex{
+            width: 33.333333333333%;
+            height: 100%;
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .videobox{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        #videoflex1{
+            background-color: #000066;
+        }
+        #videoflex2{
+            background-color: #009900;
+        }
+        #videobox1{
+            background-color: #307FB5;
+        }
+        #videobox2{
+            background-color: #fe781e;
+        }
+
+        .topandbottomvideobox1{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+        #bottomvideobox{
+            background-color: #000066;
+        }
+        #topvideobox{
+            background-color: #006600;
+        }
+        #topelement1{
+            height: 100%;
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-color: #006600;
+        }
+        #topelment2{
+            height: 100%;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-color: blue;
+            flex-flow: column;
+        }
+        #topelemetn3{
+            height: 100%;
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-color: #006600;
+            flex-flow: column;
+        }
+        #bottomelment1{
+            height: 100%;
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-color: #006600;
+        }
+        #bottomelment2{
+            height: 100%;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-color: blue;
+            flex-flow: column;
+        }
+        #bottomelment3{
+            height: 100%;
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-color: #006600;
+            flex-flow: column;
+        }
+        #lastitemtop1{
+            height: 10%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-color: #006600;
+        }
+        #lastitemtop2{
+            height: 90%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-image: url("vid1.jpg");
+            background-size: cover;
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+            border-top: 1px solid black;
+
+        }
+        #lastitembottom1{
+            height: 90%;
+            width: 100%;
+            display: flex;
+            background-color: whitesmoke;
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+            flex-flow: column;
+        }
+        #lastitembottom2{
+            height: 10%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-color: #006600;
+        }
+        #borderboxright1{
+            height: 10%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-color: #006600;
+
+        }
+        #borderboxright2{
+            height: 90%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-color: #006600;
+            border-left: 1px solid black;
+
+        }
+        #borderboxright3{
+            height: 90%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-color: #006600;
+            border-left: 1px solid black;
+
+        }
+        #borderboxright4{
+            height: 10%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-color: #006600;
+
+
+        }
+        .videoboxtext{
+            text-align: center;
+        }
+        #text1{
+            color: cadetblue;
+            font-size: large;
+        }
+
+
+
+
 
 
 
@@ -131,13 +324,41 @@
             <div id="map"></div>
 
         </div>
-
+        <div id="third">
+            <div id="videoflex1" class="videoflex">
+                <div id="videobox1" class="videobox">
+                    <div id="topvideobox" class="topandbottomvideobox1">
+                        <div id="topelement1"></div>
+                        <div id="topelment2">
+                            <div id="lastitemtop1">
+                            </div>
+                            <div id="lastitemtop2"></div>
+                        </div>
+                        <div id="topelemetn3">
+                            <div id="borderboxright1"></div>
+                            <div id="borderboxright2"></div>
+                        </div>
+                    </div>
+                    <div id="bottomvideobox" class="topandbottomvideobox1">
+                        <div id="bottomelment1"></div>
+                        <div id="bottomelment2">
+                            <div id="lastitembottom1">
+                                <h1 id="text1" class="videoboxtext">LOREM IPSUM DOLAR</h1>
+                                <p id="text2" class="videoboxtext">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores</p>
+                            </div>
+                            <div id="lastitembottom2"></div>
+                        </div>
+                        <div id="bottomelment3">
+                            <div id="borderboxright3"></div>
+                            <div id="borderboxright4"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="videobox2" class="videobox"></div>
+            </div>
+            <div id="videoflex2" class="videoflex"></div>
+            <div id="videoflex3" class="videoflex"></div>
         </div>
-
-
-
-
-
 
     </div>
 
