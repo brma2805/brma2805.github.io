@@ -78,6 +78,7 @@
             flex-flow: wrap;
             justify-content: center;
             align-items: center;
+            z-index: 1;
         }
         .videoflex{
             width: 33.333333333333%;
@@ -260,6 +261,61 @@
             font-size: large;
         }
 
+        #forth{
+            width: 100%;
+            height: 88%;
+            background-color: transparent;
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 176%;
+            z-index: 5;
+        }
+
+        .videoflexarrow{
+            width: 33.333333333333%;
+            height: 100%;
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .videoboxarrow{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        #play-element{
+            width: 30px;
+            height: 30px;
+            transform: rotate(45deg);
+            background-color: whitesmoke;
+            border: 4px solid cadetblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+        #arrow-right {
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+
+            border-left: 16px solid green;
+            transform: rotate(-45deg);
+            z-index: 11;
+        }
+
+
+
+
 
 
 
@@ -358,6 +414,19 @@
             </div>
             <div id="videoflex2" class="videoflex"></div>
             <div id="videoflex3" class="videoflex"></div>
+        </div>
+
+        <div id="forth">
+            <div id="videflex1.arrow" class="videoflexarrow">
+                <div id="videobox1.arrow" class="videoboxarrow">
+                    <div id="play-element">
+                        <div id="arrow-right"></div>
+                    </div>
+                </div>
+                <div id="videobox2.arrow" class="videoboxarrow"></div>
+            </div>
+            <div id="videflex2.arrow" class="videoflexarrow"></div>
+            <div id="videflex3.arrow" class="videoflexarrow"></div>
         </div>
 
     </div>
