@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="foundation-flex.css" rel="stylesheet">
+    <style>
+        body{
+            max-width: 720px;
+            margin: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>sjekk utvklinge mellom grove trær i ulikt årstall</h1>
+
+    <form id="skjema">
+        <input list="tretype" type="text"  id="tre" placeholder="tretype">
+        <input list="aarstall" type="number" id="inpAar1" required min="1915" max="2000" placeholder="År 1">
+        <input  list="aarstall2" type="number" id="inpAar2" required min="1915" max="2000" placeholder="År 2">
+        <button   type="submit" class="button expanded">sjekk differansen</button>
+
+        <datalist id="aarstall">
+            <option value="1915"></option>
+            <option value="1950"></option>
+            <option value="1970"></option>
+            <option value="1990"></option>
+            <option value="1992"></option>
+            <option value="2000"></option>
+        </datalist>
+
+        <datalist id="tretype">
+            <option value="furu"></option>
+            <option value="gran"></option>
+            <option value="lauvtre"></option>
+        </datalist>
+        <datalist id="aarstall2">
+            <option value="1915"></option>
+            <option value="1950"></option>
+            <option value="1970"></option>
+            <option value="1990"></option>
+            <option value="1992"></option>
+            <option value="2000"></option>
+        </datalist>
+    </form>
+
+    <div class="callout" id="tilbakemelding">
+        sjekk differansen mellom 2 år...
+    </div>
+
+
+
+
+
+
+    <script>
+        let tre = document.getElementById("tre");
+        let inpAar1 = document.getElementById("inpAar1");
+        let inpAar2 = document.getElementById("inpAar2");
+        let skjema = document.getElementById("skjema");
+        let tilbakemelding = document.getElementById("tilbakemelding");
+
+
+
+        let granår = new Map();
+        granår.set("1915", 20);
+        granår.set("1950", 31);
+        granår.set("1970", 53);
+        granår.set("1990", 89);
+        granår.set("1992", 102);
+        granår.set("2000", 117);
+
+        let furuår = new Map();
+        furuår.set("1915", 23);
+        furuår.set("1950", 39);
+        furuår.set("1970", 72);
+        furuår.set("1990", 89);
+        furuår.set("1992", 92);
+        furuår.set("2000", 99);
+
+        let lautreår = new Map();
+        lautreår.set("1915", 4);
+        lautreår.set("1950", 6);
+        lautreår.set("1970", 8);
+        lautreår.set("1990", 12);
+        lautreår.set("1992", 15);
+        lautreår.set("2000", 18);
+
+        function visTilbakemelding(evt){
+            evt.preventDefault();
+            let tretyper = tre.value;
+            if(tretyper === "furu"){
+                let aar1 = inpAar1.value;
+                let aar2 = inpAar2.value;
+
+                let promille1 = furuår.get(aar1);
+                let promille2 = furuår.get(aar2);
+
+                let diff = promille1 - promille2;
+                if(diff > 0) {
+                    tilbakemelding.className = "callout alert";
+                    tilbakemelding.innerHTML = "<h2>Negativ utvikling</h2>";
+                }else{
+                    tilbakemelding.innerHTML = "<h2>Positiv utvikling</h2>";
+                    tilbakemelding.className = "callout success";
+                }
+
+                tilbakemelding.innerHTML += `<p>Differansen er <b>${diff}.</b><p/>`;
+            }else if(tretyper === "gran"){
+                let aar1 = inpAar1.value;
+                let aar2 = inpAar2.value;
+
+                let promille1 = granår.get(aar1);
+                let promille2 = granår.get(aar2);
+
+                let diff = promille1 - promille2;
+                if(diff > 0) {
+                    tilbakemelding.className = "callout alert";
+                    tilbakemelding.innerHTML = "<h2>Negativ utvikling</h2>";
+                }else{
+                    tilbakemelding.innerHTML = "<h2>Positiv utvikling</h2>";
+                    tilbakemelding.className = "callout success";
+                }
+
+                tilbakemelding.innerHTML += `<p>Differansen er <b>${diff}.</b><p/>`;
+
+            }else if(tretyper === "lauvtre"){
+                let aar1 = inpAar1.value;
+                let aar2 = inpAar2.value;
+
+                let promille1 = lautreår.get(aar1);
+                let promille2 = lautreår.get(aar2);
+
+                let diff = promille1 - promille2;
+                if(diff > 0) {
+                    tilbakemelding.className = "callout alert";
+                    tilbakemelding.innerHTML = "<h2>positiv</h2>";
+                }else{
+                    tilbakemelding.innerHTML = "<h2>negativ</h2>";
+                    tilbakemelding.className = "callout success";
+                }
+
+                tilbakemelding.innerHTML += `<p>Differansen er <b>${diff}.</b><p/>`;
+
+            }
+
+
+        }
+
+        skjema.addEventListener("submit", visTilbakemelding );
+
+
+
+
+    </script>
+
+</body>
+</html>
