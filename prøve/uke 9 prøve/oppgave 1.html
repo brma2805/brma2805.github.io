@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Panteautomaten</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: Arial;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 1.0);
+        }
+
+        #content {
+            width: 90%;
+            height: 90%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-flow: wrap;
+            z-index: 1;
+        }
+
+        #intro-c {
+            width: 60%;
+            height: 10%;
+            background-color: rgba(250, 250, 250, 1.0);
+            box-shadow: 0 0px 1px rgba(150, 150, 150, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2% 0;
+            border: 1px solid rgba(180, 180, 180, 0.2);
+        }
+
+        #title {
+            font-size: 32px;
+            font-weight: 900;
+        }
+
+        #food-container {
+            width: 60%;
+            height: 80%;
+            background-color: rgba(250, 250, 250, 1.0);
+            box-shadow: 0 1px 1px rgba(150, 150, 150, 0.2);
+            border: 1px solid rgba(180, 180, 180, 0.2);
+            display: flex;
+            flex-flow: row;
+        }
+
+        .item {
+            width: 33.33333%;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border:  1px solid rgba(150, 150, 150, 0.2);
+            flex-flow: column;
+
+        }
+        .innerItem{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(150, 150, 150, 0.2);
+            flex-flow: column;
+        }
+        #panteknapper1{
+            width: 100%;
+            height: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: row;
+        }
+        #panteknapper2{
+            width: 100%;
+            height: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+        }
+        #innerpante{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: row;
+        }
+        .btns{
+            height: 40%;
+            width: 40%;
+            margin: 5%;
+            color: whitesmoke;
+            background-color: orangered;
+        }
+        .btns:hover{
+            border: 1px solid black;
+        }
+        #pantelotteriet{
+            width: 80%;
+            height: 40%;
+            color: white;
+            background-color: red;
+        }
+        #pantelotteriet:hover{
+            transform: scale(1.03);
+            transition: 0.1s;
+            border: 1px solid black;
+
+        }
+        #panteboksen{
+            width: 80%;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0d0d0d;
+        }
+        #pantemelding{
+            height: 40%;
+            width: 80%;
+            color: #0d0d0d;
+            background-color: rgba(150, 150, 150, 0.2);
+            margin-bottom: 2%;
+            border: 1px solid black;
+        }
+
+
+        .sec-1 {
+            width: 49%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .sec-2 {
+            width: 40%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .inp {
+            width: 80%;
+            height: 70%;
+            background-color: white;
+            transition: 0.1s;
+            border: 1px solid rgba(150, 150, 150, 0.1);
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .inp:focus {
+            outline: none;
+            -webkit-transform: scale(1.03);
+            -moz-transform: scale(1.03);
+            -ms-transform: scale(1.03);
+            -o-transform: scale(1.03);
+            transform: scale(1.03);
+            transition: 0.1s;
+        }
+
+        #calc-container {
+            width: 60%;
+            height: 20%;
+            border: 1px solid rgba(150, 150, 150, 0.1);
+            box-shadow: 0 1px 1px rgba(150, 150, 150, 0.2);
+            background-color: rgba(250, 250, 250, 1.0);
+            font-size: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #calc-desc {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+        }
+
+        #calc-value {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #mozellcontaiener{
+            z-index: 5;
+            position: relative;
+            top: 50px;
+            left: 50px;
+
+
+        }
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+    <div id="content">
+
+        <div id="intro-c">
+            <p id="title">Panteautomaten</p>
+        </div>
+
+        <div id="food-container">
+
+            <div class="item" id="div1">
+                <div class="innerItem">
+                    <img src="battery052014%20(1).png" id="battery">
+                </div>
+                <div class="innerItem">
+                    <img src="mozell.png" id="mozell">
+                </div>
+
+            </div>
+
+            <div class="item">
+                <div class="innerItem">
+                    <img src="Farris-sitron.png" id="farris">
+                </div>
+                <div class="innerItem">
+                    <img src="7up_mp_pack.png" id="7up">
+                </div>
+
+            </div>
+
+            <div class="item">
+                <div class="innerItem">
+                    <div id="panteknapper1">
+                        <div id="innerpante">
+                            <button class="btns" id="btn1">Start panting</button>
+                            <button class="btns" id="btn2">Avslutt panting</button>
+                        </div>
+
+                    </div>
+                    <div id="panteknapper2">
+                        <div id="pantemelding"><p>trykk på flaskene for å starte pantingen</p></div>
+                        <button id="pantelotteriet">pantelotteriet!!</button>
+                    </div>
+                </div>
+                <div class="innerItem">
+                    <div id="panteboksen">
+                        <img src="mozell.png" id="mozelll">
+                        <img src="battery052014%20(1).png" id="batttery">
+                        <img src="7up_mp_pack.png" id="sjuuup">
+                        <img src="Farris-sitron.png" id="farrris">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="calc-container">
+            <div id="calc-desc">
+                <p>Antall Pant:</p>
+            </div>
+            <div id="calc-value">
+                <p id="summer">0 kr</p>
+            </div>
+        </div>
+
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="vinner">Some text in the Modal..</p>
+        </div>
+
+    </div>
+
+
+
+
+
+    <script>
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+        let mozell = document.getElementById("mozell");
+        let battery = document.getElementById("battery");
+        let sjuup = document.getElementById("7up");
+        let farris = document.getElementById("farris");
+        let pantemelding = document.getElementById("pantemelding");
+        let summer = document.getElementById("summer");
+        let mozellcontaiener = document.getElementById("mozellcontaiener");
+        let mozelll = document.getElementById("mozelll");
+        let farrris = document.getElementById("farrris");
+        let batttery = document.getElementById("batttery");
+        let sjuuup = document.getElementById("sjuuup");
+        let pantelotteriet = document.getElementById("pantelotteriet");
+        var modal = document.getElementById('myModal');
+        var span = document.getElementsByClassName("close")[0];
+        let vinner = document.getElementById("vinner");
+
+
+
+
+        let m = 0;
+        let moz = 2;
+        let bat = 5;
+        let faris = 1;
+        sum = 0;
+        gevinst = 150;
+        n = 0;
+        up = 0;
+        f = 0;
+        b = 0;
+
+
+
+        btn1.onclick = function () {
+            m +=1;
+            console.log(m);
+            if(m === 0){
+                alert("du har ikke trykket på start pantingen knappen")
+
+            }else if(m === 1){
+                console.log("dette funker");
+
+                mozell.onclick = function (){
+                    pantemelding.innerHTML = "Du får 2 kr i pant";
+                    summer.innerHTML = "";
+                    sum += moz;
+                    summer.innerHTML = sum + "kr";
+                    n+=1;
+
+                };
+                battery.onclick = function (){
+                    pantemelding.innerHTML = "Det blir hele 5 kr i pant";
+                    summer.innerHTML = "";
+                    sum += bat;
+                    summer.innerHTML = sum + "kr";
+                    b+=1;
+
+                };
+                farris.onclick = function (){
+                    pantemelding.innerHTML = "Du får bare 1 kr i pant";
+                    summer.innerHTML = "";
+                    sum += faris;
+                    summer.innerHTML = sum + "kr";
+                    f+=1;
+
+                };
+                sjuup.onclick = function (){
+                    pantemelding.innerHTML = "ojjj 0 kr i pant denne gangen";
+                    up+=1;
+                    console.log(up);
+
+                };
+                pantelotteriet.onclick = function () {
+                    let pantelotteriett  = Math.random();
+                    pantelotteriett = pantelotteriett * 10;
+                    console.log("pantelloeriet" +pantelotteriett);
+                    if(sum === 0){
+                        console.log("det skjer ikke mye")
+                    }else if(pantelotteriett >= 9){
+                        m-=m;
+                        console.log("du har vunnet");
+                        gevinst = gevinst *sum ;
+                        console.log(gevinst);
+
+                        vinner.innerHTML = "Gratulerer du har vunnet " + gevinst+ "kr";
+
+
+
+                        modal.style.display = "block";
+
+
+
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                        };
+
+
+                        window.onclick = function(event) {
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
+                        };
+
+                    }else if(pantelotteriett < 9){
+                        m-=m;
+
+                        vinner.innerHTML = "Dessverre så vant du ikke dennne gangen :(";
+
+
+                        modal.style.display = "block";
+
+
+
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                        };
+
+
+                        window.onclick = function(event) {
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
+                        };
+                    }
+
+                    sum-=sum;
+                    summer.innerHTML = sum +"kr";
+
+
+
+
+
+                };
+                btn2.onclick = function () {
+                    m-=m;
+
+                    vinner.innerHTML = "Du har pantet; " + up +" " + " 7up flasker" + "<br>"+ "Du har pantet;" + f+" "+"farris flasker" + "<br>" +"Du har pantet;" + b+ " "+"battery flasker"+ "<br>" +"Du har pantet; " + n +"mozell flasker" +"<br>" + "Total pant er; "+sum+"kr" ;
+
+
+                    modal.style.display = "block";
+
+
+
+                    span.onclick = function() {
+                        modal.style.display = "none";
+                    };
+
+
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    };
+                    sum-=sum;
+                    b-=b;
+                    up-=up;
+                    f-=f;
+                    n-=n;
+                    m-=m;
+                    summer.innerHTML = sum +"kr";
+
+
+                }
+                
+            }else if(m > 1){
+                console.log("prøv igjen");
+                m-=m;
+                console.log(m);
+                alert("pantingen ble avbrutt på grunn av system feil prøv på nytt. trykk deretter på start panteknappen hvis du vil pante mer");
+                pantemelding.innerHTML = "trykk på flaskene for å starte pantingen";
+                mozell.onclick = function (){
+                    pantemelding.innerHTML = "trykk på flaskene for å starte pantingen"
+
+                };
+                battery.onclick = function (){
+                    pantemelding.innerHTML = "trykk på flaskene for å starte pantingen"
+
+                };
+                farris.onclick = function (){
+                    pantemelding.innerHTML = "trykk på flaskene for å starte pantingen"
+
+                };
+                sjuup.onclick = function (){
+                    pantemelding.innerHTML = "trykk på flaskene for å starte pantingen"
+
+                };
+
+            }
+        };
+
+
+
+
+    </script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        var main = function() {
+            $('#sjuuup').hide();
+            $('#farrris').hide();
+            $('#batttery').hide();
+            $('#mozelll').hide();
+            /* Push the body and the nav over by 285px over */
+            $('#mozell').click(function() {
+                $('#mozelll').show(400);
+                $('#mozelll').hide(400);
+                $('mozelll').animate({
+                    rotate: 360
+                }, 1000);
+                $('#mozell').hide();
+                $('#mozell').show(2000);
+
+
+            });
+            $('#battery').click(function() {
+                $('#batttery').show(400);
+                $('#batttery').hide(400);
+                $('batttery').animate({
+                    rotate: 360
+                }, 1000);
+                $('#battery').hide();
+                $('#battery').show(2000);
+
+            });
+            $('#farris').click(function() {
+                $('#farrris').show(400);
+                $('#farrris').hide(400);
+                $('farrris').animate({
+                    rotate: 360
+                }, 1000);
+                $('#farris').hide();
+                $('#farris').show(2000);
+
+            });
+            $('#7up').click(function() {
+                $('#sjuuup').show(400);
+                $('#sjuuup').hide(400);
+                $('#sjuuup').animate({
+                    rotate: 360
+                }, 1000);
+                $('#7up').hide();
+                $('#7up').show(2000);
+
+            });
+
+
+
+        };
+
+
+        $(document).ready(main);
+
+    </script>
+
+</body>
+</html>
